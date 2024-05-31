@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="static/css/bootstrap.min.css">
+		<meta charset="UTF-8">
+		<title>SKkisec</title>
+		<style>
+		body {
+		font-family: Arial, sans-serif;
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		}
+		.hh {
+			margin: 0 auto;
+		}
+		header {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 20px;
+			/* background-color: #f8f8f8; */
+			margin: 0 auto;
+		}
+
+		.header-links a {
+			margin-left: 15px;
+			text-decoration: none;
+			color: #333;
+			font-size: small;
+		}
+
+		nav {
+			background-color: #333;
+			margin: 0 auto;
+		}
+
+		nav ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+		}
+
+		nav ul li {
+			margin: 0 15px;
+		}
+
+		nav ul li a {
+			text-decoration: none;
+			color: white;
+			/* font-weight: bold; */
+			padding: 15px;
+			display: block;
+		}
+
+		nav ul li a:hover {
+			background-color: #555;
+		}
+
+		footer {
+			background-color: #fcfbfb;
+			text-align: center;
+			padding: 20px;
+			position: fixed;
+			width: 100%;
+			bottom: 0;
+		}
+
+		footer p {
+			font-size: 12px;
+			color: #6e6e6e;
+			margin: 5px 0;
+		}
+
+		@media (min-width: 1000px) {
+			header  {
+				width: 700px;
+				margin : 0 auto;
+			}
+		}
+		.form-signin{
+			width: 100%;
+			max-width: 330px;
+			padding: 15px;
+			margin: auto;
+			font-weight: 400;
+		}
+
+		.form-signin .form-floating:focus-within{
+			z-index: 2;
+		}
+
+		.form-signin input[type="text"]{
+			margin-bottom: 10px;
+			border-bottom-right-radius: 0;
+			border-bottom-left-radius: 0;
+		}
+
+		.form-signin input[type="password"]{
+			margin-bottom: 10px;
+			border-top-left-radius: 0;
+			border-top-right-radius: 0;
+		}
+		.btn1{
+            margin-top : 0px;
+            padding : 10px 20px;
+            font-size : 16px;
+            border : none;
+            border-radius: 20px;
+            background-color : #7469B6;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn1:hover {
+            background-color: #AD88C6; /* 호버 시 배경색 변경 */
+        }
+		</style>
+	</head>
+	<body>
+		<div class="hh">
+			<header>   
+				<div>
+					<a href="main.php">
+						<img width="170px" src="./img/kisec.png">
+					</a>
+				</div>
+				<div class="header-links">
+					<a href="login_success.php">로그인</a>
+					<a href="#">회원가입</a>
+				</div>
+			</header>
+			<nav>
+				<ul>
+					<li><a href="#">공지사항</a></li>
+					<li><a href="#">뉴스클리핑</a></li>
+				</ul>
+			</nav>
+		</div>
+
+        <div class="form-signin">
+			<!-- 폼 -->   
+			<form method="post" action="joinDB.php">
+				<h3 class="mb-3 fw-bold" style="text-align: center;">회원가입</h3>
+				<div class="form-floating">
+					<input type="text" class="form-control" placeholder=""  name="id" id="userID">
+					<label for="">ID *</label> 
+				</div>
+				<!-- 중복검사 버튼 -->
+				<div style="text-align: center; margin-bottom: 10px;">
+					<button class="btn1" type="button" onclick="checkID()">ID 중복검사</button>
+				</div>
+				<div id="idCheckResult" style="text-align: center; color: red; margin-bottom: 10px;"></div>
+				<div class="form-floating">
+					<input type="password" class="form-control" name="pw"  id="floatingInput" placeholder="passwo">
+					<label for="">password *</label>
+				</div>
+				<div class="form-floating">
+					<input type="text" class="form-control" placeholder=""  name="userName" >
+					<label for="">이름 *</label> 
+				</div>
+				<!-- 회원가입 버튼 -->
+				<div style="text-align: center; margin-bottom: 10px;">
+					<button onclick="joinCheck()" class="btn1" type="submit" value="join">회원가입</button>	
+				</div>
+			</form>
+		</div>
+
+		<footer>
+			<p>&copy; 2024 Kisec. All rights reserved.</p>
+			<p>본관 : 서울시 강남구 남부순환로 2645 한독빌딩 5층 SPACE HUM</p>
+			<p>대표이사 : 이경빈 &nbsp;|&nbsp; 대표번호 : 02-921-1465 &nbsp;|&nbsp; 사업자등록번호 : 120-86-17944</p>
+			<p></p>
+		</footer>
+		<script>
+			function checkID() {
+				const userID = document.getElementById('userID').value;
+				if (userID === "") {
+					alert("ID를 입력해주세요.");
+					return;
+				}
+	
+				const xhr = new XMLHttpRequest();
+				xhr.open("GET", "join_ID_check.php?id=" + encodeURIComponent(userID), true);
+				xhr.onreadystatechange = function () {
+					if (xhr.readyState == 4 && xhr.status == 200) {
+						document.getElementById('idCheckResult').innerText = xhr.responseText;
+					}
+				};
+				xhr.send();
+			}
+		</script>
+	</body>
+</html>

@@ -164,7 +164,7 @@ $message = "";
     <header>   
         <div>
             <a href="main.php">
-                <img width="170px" src="./img/kisec.png">
+                <img width="170px" src="./img/skimg.png">
             </a>
         </div>
         <?php if ($logged_in): ?>

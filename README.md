@@ -1,12 +1,12 @@
 # 목적
 웹 해킹을 쉽게 할 수 있도록 취약한 웹페이지 입니다.
 보안 코드도 삽입되어 있으니 여러 실습을 통해 sql 인젝션 공격 지식을 확보할 수 있습니다.
-
+추가로 file upload 기능도 있으니 웹쉘 실습과 xss/csrf 를 통해 하이재킹 같은 실습도 가능합니다.
 
 # 설정
 ## 데이터베이스
 Server version	5.5.68-MariaDB
-
+5버전 이상을 사용하시길 바랍니다.
 
 ## 테이블 생성
 
@@ -38,9 +38,11 @@ CREATE TABLE `users` (
   PRIMARY KEY (`idx`)
 ) 
 
+위와 같이 테이블을 생성하시면 됩니다.
+
 ## db_conn.php
 $conn = mysql_connect("localhost", "사용자계정", "사용자비번", "데이터베이스이름")
-
+서버 사용자 (root) 와 비번을 적으시고 생성한 db이름을 적으시면 됩니다.
 
 ![db구성도](https://github.com/user-attachments/assets/c461e252-721d-41b5-96ec-bbc87027fc73)
 

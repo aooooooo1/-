@@ -40,3 +40,8 @@ CREATE TABLE `users` (
 
 ## db_conn.php
 $conn = mysql_connect("localhost", "사용자계정", "사용자비번", "데이터베이스이름")
+
+
+![db구성도](https://github.com/user-attachments/assets/c461e252-721d-41b5-96ec-bbc87027fc73)
+
+![skimg](https://github.com/user-attachments/assets/f5c7662f-bda1-4a38-84ee-add3a4b3750d)

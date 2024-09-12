@@ -1,5 +1,7 @@
 ## -- Server version	5.5.68-MariaDB
 
+### 테이블 생성
+
 CREATE TABLE `board` (
   `idx` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(100) NOT NULL,

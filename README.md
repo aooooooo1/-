@@ -31,4 +31,4 @@ CREATE TABLE `users` (
 ) 
 
 ## db_conn.php
-자신의 데이터베이스 이름과 비번 사용자 계정을 적으면 됩니다.
+$conn = mysql_connect("localhost", "사용자계정", "사용자비번", "데이터베이스이름")

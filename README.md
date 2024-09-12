@@ -29,3 +29,6 @@ CREATE TABLE `users` (
   `authority` enum('general','admin') DEFAULT 'general',
   PRIMARY KEY (`idx`)
 ) 
+
+## db_conn.php
+자신의 데이터베이스 이름과 비번 사용자 계정을 적으면 됩니다.

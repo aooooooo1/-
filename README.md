@@ -2,9 +2,13 @@
 웹 해킹을 쉽게 할 수 있도록 취약한 웹페이지 입니다.
 보안 코드도 삽입되어 있으니 여러 실습을 통해 sql 인젝션 공격 지식을 확보할 수 있습니다.
 
-## -- Server version	5.5.68-MariaDB
 
-### 테이블 생성
+# 설정
+## 데이터베이스
+Server version	5.5.68-MariaDB
+
+
+## 테이블 생성
 
 CREATE TABLE `board` (
   `idx` int(11) NOT NULL AUTO_INCREMENT,

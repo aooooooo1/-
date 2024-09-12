@@ -1,7 +1,7 @@
 
-![w3](https://github.com/user-attachments/assets/6301a7a4-f594-4e8c-a5bd-c82367fdbd31)
-![w2](https://github.com/user-attachments/assets/44be7983-8f57-4359-bd12-7e71ecd4dfc8)
-![w1](https://github.com/user-attachments/assets/863f0fac-60a5-40cf-8d07-03479f08fa49)
+<img src="https://github.com/user-attachments/assets/6301a74d-f594-4e8c-a5bd-c82367dfbd31" width="400"/>
+<img src="https://github.com/user-attachments/assets/44be7903-8f57-4359-bd12-7e71ecd4dfc8" width="400"/>
+<img src="https://github.com/user-attachments/assets/863f0fac-6ea5-46cf-8d07-03479f08fa49" width="400"/>
 
 # 목적
 웹 해킹을 쉽게 할 수 있도록 취약한 웹페이지 입니다.
